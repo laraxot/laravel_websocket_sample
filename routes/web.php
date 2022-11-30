@@ -28,9 +28,13 @@ Route::get('messages', 'ChatsController@fetchMessages');
 Route::post('messages', 'ChatsController@sendMessage');
 */
 
+/*
 Route::get('/',  [\App\Http\Controllers\ChatsController::class, 'index'])->name('home');;
 Route::get('messages',  [\App\Http\Controllers\ChatsController::class,'fetchMessages']);
 Route::post('messages',  [\App\Http\Controllers\ChatsController::class,'sendMessage']);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+*/
+
+Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');

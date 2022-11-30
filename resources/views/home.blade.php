@@ -13,8 +13,10 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
+                    {{--
                     {{ __('You are logged in!') }}
+                    --}}
+                    <livewire:broad />
                 </div>
             </div>
         </div>

@@ -15,11 +15,13 @@ class Broad extends Component
     }
 
     public function try(){
+        session()->flash('message', 'try ['.now().']');
        // OrderShipped::dispatch();
         event(new OrderShipped);
     }
 
     public function notifyNewOrder()  {
+        session()->flash('message', 'notifyNewOrder ['.now().']');
         dd('fine');
         //$this->showNewOrderNotification = true;
     }
