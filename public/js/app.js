@@ -5399,13 +5399,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var laravel_echo__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! laravel-echo */ "./node_modules/laravel-echo/dist/echo.js");
 
 window.Pusher = __webpack_require__(/*! pusher-js */ "./node_modules/pusher-js/dist/web/pusher.js");
+var yourTokenLogin = $('meta[name="csrf-token"]').attr('content');
 window.Echo = new laravel_echo__WEBPACK_IMPORTED_MODULE_0__["default"]({
   broadcaster: 'pusher',
-  key: "websocketkey",
-  wsHost: window.location.hostname,
-  wsPort: 6001,
+  key: 'ABCDEFG',
+  wsHost: '127.0.0.1',
+  wsPort: '6001',
+  wssPort: '6001',
   forceTLS: false,
-  disableStats: true
+  disableStats: false
+  //enabledTransports: ['ws', 'wss'],
+  //wsPath: '/laravel_websocket_sample/public'
+  /*authEndpoint: 'http://localhost/laravel_websocket_sample/public/broadcasting/auth',
+  encrypted: true,
+  auth: {
+      headers: {
+          Authorization: 'Bearer ' + yourTokenLogin
+      },
+  }*/
+});
+
+window.Echo.channel('trades').listen('NewTrade', function (e) {
+  console.log(e.trade);
 });
 
 /***/ }),

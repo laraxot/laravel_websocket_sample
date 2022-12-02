@@ -1,5 +1,4 @@
 const mix = require('laravel-mix');
-
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -15,10 +14,15 @@ mix.js('resources/js/app.js', 'public/js')
     .postCss('resources/css/app.css', 'public/css')
     //.minify('public/js/app.js')
     //.minify('public/css/app.css')
-    ;
+;
 /*
 mix.browserSync({
     proxy: 'localhost:8000',
     notify: true
 });
 */
+
+
+/*require('mix-env-file');
+mix.env('C:/var/www/.env');
+console.log('VALORE VARIABILE ENV TEST', process.env.TEST)*/
